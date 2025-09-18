@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Foundation512 — SCP Web Console</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">Foundation512</div>
+    <div class="title">SCP Web Console — Demo</div>
+    <div class="hint">Press <kbd>Ctrl</kbd>+<kbd>P</kbd> to toggle show/hide (demo)</div>
+  </header>
+
+  <main class="container">
+    <section class="left">
+      <h3>Archive</h3>
+      <div id="scpList" class="scp-list"></div>
+    </section>
+
+    <section class="center">
+      <div class="panel">
+        <h2 id="panelTitle">Welcome — Select a module</h2>
+        <p id="panelMeta" class="muted">Use the animated boxes below to open different HTML modules or view assets.</p>
+        <div id="panelContent" class="content">No module loaded.</div>
+      </div>
+
+      <div class="boxes-grid" aria-hidden="false">
+        <!-- 6 animated boxes -->
+        <div class="box" data-target="pages/html1.html">HTML 1<br><small>Assets & Documents</small></div>
+        <div class="box" data-target="pages/html2.html">HTML 2<br><small>Security</small></div>
+        <div class="box" data-target="pages/html3.html">HTML 3<br><small>Logs</small></div>
+        <div class="box" data-target="assets">Assets<br><small>Open assets manifest</small></div>
+        <div class="box" data-target="documents">Documents<br><small>Open documents list</small></div>
+        <div class="box" data-target="open-all">Open All<br><small>Preview modules</small></div>
+      </div>
+    </section>
+
+    <aside class="right">
+      <h4>Quick Actions</h4>
+      <button id="btnOpenHTML1">Open HTML1</button>
+      <button id="btnOpenManifest">Show Assets Manifest</button>
+      <div id="manifestView" class="manifest"></div>
+    </aside>
+  </main>
+
+  <footer class="footer">Demo package for Foundation512 — ready for GitHub Pages</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

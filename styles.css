@@ -1,0 +1,47 @@
+:root{
+  --bg:#05060a;--panel:#0b0c10;--accent:#b22b2b;--muted:#9aa3b2;
+  --glass: rgba(255,255,255,0.03);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,Arial;background:linear-gradient(180deg,#020205,#061021);color:#e6eef6}
+.topbar{display:flex;align-items:center;gap:12px;padding:12px 20px;background:rgba(0,0,0,0.25);backdrop-filter:blur(4px)}
+.logo{font-weight:800;color:var(--accent);}
+.title{opacity:.9;font-size:15px}
+.hint{margin-left:auto;font-size:13px;color:var(--muted)}
+
+.container{display:grid;grid-template-columns:240px 1fr 280px;gap:18px;padding:18px;height:calc(100vh - 120px)}
+.left{background:var(--panel);padding:12px;border-radius:10px;border:1px solid var(--glass);overflow:auto}
+.center{display:flex;flex-direction:column;gap:12px}
+.right{background:var(--panel);padding:12px;border-radius:10px;border:1px solid var(--glass)}
+
+.panel{background:linear-gradient(180deg,#091018,#06121b);padding:14px;border-radius:10px;border:1px solid var(--glass);min-height:120px}
+.muted{color:var(--muted)}
+
+.boxes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:6px;align-items:stretch}
+.box{background:linear-gradient(135deg,#0f1220,#071422);padding:18px;border-radius:10px;border:1px solid var(--glass);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;min-height:110px;position:relative;overflow:hidden;transition:transform .28s ease,box-shadow .28s ease}
+.box:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(0,0,0,0.6)}
+
+.box::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(178,43,43,0.08),transparent);opacity:0;transition:opacity .28s ease}
+.box:hover::after{opacity:1}
+
+/* subtle floating animation */
+@keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
+.box:nth-child(1){animation:floaty 6s ease-in-out infinite}
+.box:nth-child(2){animation:floaty 5.5s ease-in-out infinite}
+.box:nth-child(3){animation:floaty 6.6s ease-in-out infinite}
+.box:nth-child(4){animation:floaty 5.8s ease-in-out infinite}
+.box:nth-child(5){animation:floaty 6.2s ease-in-out infinite}
+.box:nth-child(6){animation:floaty 5.3s ease-in-out infinite}
+
+.scp-list .scp-item{padding:8px;border-radius:6px;margin-bottom:8px;background:rgba(255,255,255,0.02);cursor:pointer}
+.scp-list .scp-item:hover{outline:1px solid rgba(255,255,255,0.03)}
+
+.manifest{margin-top:8px;padding:8px;background:rgba(255,255,255,0.02);border-radius:6px;max-height:240px;overflow:auto;font-size:13px;color:var(--muted)}
+
+.footer{padding:12px;text-align:center;color:var(--muted)}
+
+/* responsive */
+@media (max-width:900px){
+  .container{grid-template-columns:1fr;grid-template-rows:auto auto auto;overflow:auto;height:auto}
+  .right{order:3}
+}
